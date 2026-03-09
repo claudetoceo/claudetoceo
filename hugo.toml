@@ -1,0 +1,67 @@
+baseURL = "https://claudetoceo.com"
+languageCode = "en-us"
+title = "Claude to CEO"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  author = "Chris / HaxDogma"
+  description = "A public record of building a path to CEO of Anthropic — through AI security research, safety education, and radical transparency."
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowFullTextinRSS = true
+  defaultTheme = "dark"
+  disableThemeToggle = false
+
+  [params.homeInfoParams]
+    Title = "This is not content. This is a record."
+    Content = """
+I'm Chris. I run [HaxDogma](https://youtube.com/@haxdogma) — a YouTube channel on AI security and safety.
+
+I spent 15 years in enterprise defensive security, watching real adversaries work in the wild and building detection logic to stop them. About a year ago I started looking at AI systems through the same lens.
+
+**I'm publicly building a path to become CEO of Anthropic.**
+
+Not a metaphor. Not a brand play. A 10-year plan, documented in the open, accountable to anyone watching.
+
+This site is the research record.
+"""
+
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://youtube.com/@haxdogma"
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/haxdogma"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/haxdogma"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Roadmap"
+    url = "/roadmap/"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+  [markup.goldmark.renderer]
+    unsafe = true
