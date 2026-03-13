@@ -20,13 +20,15 @@ paginate = 10
     Content = """
 I'm Chris. I run [HaxDogma](https://youtube.com/@haxdogma) — a YouTube channel on AI security and safety.
 
-I spent 15 years in enterprise defensive security, watching real adversaries work in the wild and building detection logic to stop them. About a year ago I started looking at AI systems through the same lens.
+I spent 15 years in enterprise defensive security: watching real adversaries work in production environments and writing detection logic to stop them. I've since turned that lens on AI systems.
 
 **I'm publicly building a path to become CEO of Anthropic.**
 
-Not a metaphor. Not a brand play. A 10-year plan, documented in the open, accountable to anyone watching.
+Not a metaphor. Not a brand play. A 10-year plan, executed in the open, accountable to anyone watching.
 
-This site is the research record.
+My first finding: a small local language model followed injected attacker instructions **77.8% of the time**, with no resistance from position or phrasing. That's not a theoretical risk — that's a measured failure rate on a live model.
+
+This site is where the work lives. Research findings, progress updates, and the full roadmap — documented as it happens.
 """
 
   [[params.socialIcons]]
