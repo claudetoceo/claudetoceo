@@ -92,7 +92,7 @@ ollama pull llama3.2:3b
 python3 test_runner.py --model llama3.2:3b --verbose
 ```
 
-Full test code: [test_runner.py](https://github.com/haxdogma/claudetoceo/blob/main/research/prompt_injection/test_runner.py)
+Full test code: [test_runner.py](https://github.com/claudetoceo/claudetoceo/blob/master/research/prompt_injection/test_runner.py)
 
 ---
 
