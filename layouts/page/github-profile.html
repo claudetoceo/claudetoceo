@@ -1,0 +1,237 @@
+{{- define "main" }}
+<div class="gh-page">
+
+    <!-- ── Profile header ───────────────────────────────────────────────── -->
+    <div id="gh-profile" class="gh-profile">
+        <div class="gh-avatar-wrap">
+            <img id="gh-avatar" class="gh-avatar" src="" alt="GitHub avatar" loading="lazy">
+        </div>
+        <div class="gh-meta">
+            <h1 id="gh-name" class="gh-name">Loading…</h1>
+            <p  id="gh-login" class="gh-login"></p>
+            <p  id="gh-bio"   class="gh-bio"></p>
+            <div id="gh-stats" class="gh-stats"></div>
+            <a  id="gh-link"  class="gh-link" href="https://github.com/claudetoceo"
+                target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </div>
+    </div>
+
+    <!-- ── Contribution graph ───────────────────────────────────────────── -->
+    <section class="gh-section">
+        <h2 class="gh-section-title">Contributions</h2>
+        <div class="gh-contrib-wrap">
+            <img
+                src="https://ghchart.rshah.org/claudetoceo"
+                alt="GitHub contribution chart for claudetoceo"
+                class="gh-contrib-chart"
+                loading="lazy"
+            >
+        </div>
+    </section>
+
+    <!-- ── Repositories ─────────────────────────────────────────────────── -->
+    <section class="gh-section">
+        <h2 class="gh-section-title">Projects</h2>
+        <div id="gh-repos" class="gh-repos">
+            <p class="gh-loading">Loading repositories…</p>
+        </div>
+    </section>
+
+    <!-- ── Recent activity ──────────────────────────────────────────────── -->
+    <section class="gh-section">
+        <h2 class="gh-section-title">Recent Activity</h2>
+        <ul id="gh-activity" class="gh-activity">
+            <li class="gh-loading">Loading activity…</li>
+        </ul>
+    </section>
+
+</div>
+
+<script>
+(function () {
+    "use strict";
+
+    var GH_USER = "claudetoceo";
+    var API     = "https://api.github.com";
+
+    // ── Safe text setter (no innerHTML) ─────────────────────────────────
+    function setText(id, value) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = value || "";
+    }
+
+    function setAttr(id, attr, value) {
+        var el = document.getElementById(id);
+        if (el) el.setAttribute(attr, value || "");
+    }
+
+    // ── Fetch helpers ────────────────────────────────────────────────────
+    function ghFetch(path) {
+        return fetch(API + path, {
+            headers: { "Accept": "application/vnd.github+json" }
+        }).then(function (r) {
+            if (!r.ok) throw new Error("GitHub API error: " + r.status);
+            return r.json();
+        });
+    }
+
+    // ── Profile ──────────────────────────────────────────────────────────
+    ghFetch("/users/" + GH_USER).then(function (u) {
+        setAttr("gh-avatar", "src", u.avatar_url);
+        setAttr("gh-avatar", "alt", u.login + " avatar");
+        setText("gh-name",  u.name || u.login);
+        setText("gh-login", "@" + u.login);
+        setText("gh-bio",   u.bio || "");
+
+        var stats = document.getElementById("gh-stats");
+        if (stats) {
+            var items = [
+                { label: "Repositories", value: u.public_repos },
+                { label: "Followers",    value: u.followers    },
+                { label: "Following",    value: u.following    },
+            ];
+            items.forEach(function (item) {
+                var span = document.createElement("span");
+                span.className = "gh-stat";
+                var strong = document.createElement("strong");
+                strong.textContent = item.value;
+                var label = document.createTextNode(" " + item.label);
+                span.appendChild(strong);
+                span.appendChild(label);
+                stats.appendChild(span);
+            });
+        }
+    }).catch(function () {
+        setText("gh-name", "Could not load profile.");
+    });
+
+    // ── Repositories ─────────────────────────────────────────────────────
+    ghFetch("/users/" + GH_USER + "/repos?sort=updated&per_page=6&type=public")
+    .then(function (repos) {
+        var container = document.getElementById("gh-repos");
+        if (!container) return;
+        container.innerHTML = "";
+
+        if (!repos.length) {
+            var empty = document.createElement("p");
+            empty.textContent = "No public repositories yet.";
+            container.appendChild(empty);
+            return;
+        }
+
+        repos.forEach(function (repo) {
+            var card = document.createElement("a");
+            card.className  = "gh-repo-card";
+            card.href       = repo.html_url;
+            card.target     = "_blank";
+            card.rel        = "noopener noreferrer";
+
+            var name = document.createElement("h3");
+            name.className   = "gh-repo-name";
+            name.textContent = repo.name;
+
+            var desc = document.createElement("p");
+            desc.className   = "gh-repo-desc";
+            desc.textContent = repo.description || "No description.";
+
+            var meta = document.createElement("div");
+            meta.className = "gh-repo-meta";
+
+            if (repo.language) {
+                var lang = document.createElement("span");
+                lang.className   = "gh-repo-lang";
+                lang.textContent = repo.language;
+                meta.appendChild(lang);
+            }
+
+            var stars = document.createElement("span");
+            stars.className   = "gh-repo-stars";
+            stars.textContent = "★ " + repo.stargazers_count;
+            meta.appendChild(stars);
+
+            var forks = document.createElement("span");
+            forks.className   = "gh-repo-forks";
+            forks.textContent = "⑂ " + repo.forks_count;
+            meta.appendChild(forks);
+
+            card.appendChild(name);
+            card.appendChild(desc);
+            card.appendChild(meta);
+            container.appendChild(card);
+        });
+    }).catch(function () {
+        var container = document.getElementById("gh-repos");
+        if (container) container.textContent = "Could not load repositories.";
+    });
+
+    // ── Recent activity ───────────────────────────────────────────────────
+    ghFetch("/users/" + GH_USER + "/events/public?per_page=10")
+    .then(function (events) {
+        var list = document.getElementById("gh-activity");
+        if (!list) return;
+        list.innerHTML = "";
+
+        var shown = 0;
+        events.forEach(function (ev) {
+            if (shown >= 8) return;
+
+            var action = "";
+            var link   = "https://github.com/" + GH_USER;
+
+            if (ev.type === "PushEvent" && ev.payload.commits && ev.payload.commits.length) {
+                var msg = ev.payload.commits[ev.payload.commits.length - 1].message.split("\n")[0];
+                action = "Pushed to " + ev.repo.name + ": " + msg;
+                link   = "https://github.com/" + ev.repo.name;
+            } else if (ev.type === "CreateEvent") {
+                action = "Created " + (ev.payload.ref_type || "repository") + " in " + ev.repo.name;
+                link   = "https://github.com/" + ev.repo.name;
+            } else if (ev.type === "WatchEvent") {
+                action = "Starred " + ev.repo.name;
+                link   = "https://github.com/" + ev.repo.name;
+            } else if (ev.type === "IssuesEvent") {
+                action = (ev.payload.action || "Opened") + " issue in " + ev.repo.name;
+                link   = "https://github.com/" + ev.repo.name;
+            } else if (ev.type === "PullRequestEvent") {
+                action = (ev.payload.action || "Opened") + " PR in " + ev.repo.name;
+                link   = "https://github.com/" + ev.repo.name;
+            } else if (ev.type === "ForkEvent") {
+                action = "Forked " + ev.repo.name;
+                link   = "https://github.com/" + ev.repo.name;
+            } else {
+                return; // skip unrecognised event types
+            }
+
+            var li = document.createElement("li");
+            li.className = "gh-activity-item";
+
+            var a = document.createElement("a");
+            a.href   = link;
+            a.target = "_blank";
+            a.rel    = "noopener noreferrer";
+            a.textContent = action;
+
+            var date = document.createElement("span");
+            date.className   = "gh-activity-date";
+            date.textContent = new Date(ev.created_at).toLocaleDateString("en-US", {
+                month: "short", day: "numeric", year: "numeric"
+            });
+
+            li.appendChild(a);
+            li.appendChild(date);
+            list.appendChild(li);
+            shown++;
+        });
+
+        if (!shown) {
+            var none = document.createElement("li");
+            none.textContent = "No recent public activity.";
+            list.appendChild(none);
+        }
+    }).catch(function () {
+        var list = document.getElementById("gh-activity");
+        if (list) list.textContent = "Could not load activity.";
+    });
+
+})();
+</script>
+{{- end }}

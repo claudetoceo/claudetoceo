@@ -12,4 +12,62 @@
 </article>
 {{- end -}}
 
+<!-- ── Latest YouTube video ─────────────────────────────────────────────── -->
+<section class="latest-video-section">
+    <div class="latest-video-header">
+        <h2 class="latest-video-title">Latest Video</h2>
+        <a class="latest-video-channel" href="https://youtube.com/@haxdogma" target="_blank" rel="noopener noreferrer">
+            View channel →
+        </a>
+    </div>
+    <div id="video-container" class="video-container">
+        <div id="video-placeholder" class="video-placeholder">
+            <div class="video-placeholder-inner">Loading latest video…</div>
+        </div>
+    </div>
+    <p id="video-title" class="video-caption"></p>
+</section>
+
+<script>
+(function () {
+    "use strict";
+
+    var container   = document.getElementById("video-container");
+    var placeholder = document.getElementById("video-placeholder");
+    var caption     = document.getElementById("video-title");
+
+    fetch("/latest-video")
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+            if (!data.videoId) throw new Error("no video");
+
+            // Build iframe — videoId is validated server-side to digits/letters only
+            var iframe = document.createElement("iframe");
+            iframe.className         = "video-iframe";
+            iframe.src               = "https://www.youtube.com/embed/" + encodeURIComponent(data.videoId);
+            iframe.title             = data.title || "Latest video";
+            iframe.allow             = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen   = true;
+            iframe.loading           = "lazy";
+
+            // Replace placeholder with iframe
+            container.replaceChild(iframe, placeholder);
+
+            // Set caption using textContent — never innerHTML
+            if (data.title && caption) {
+                caption.textContent = data.title;
+            }
+        })
+        .catch(function () {
+            if (placeholder) {
+                placeholder.querySelector(".video-placeholder-inner").textContent =
+                    "Could not load video. Watch on YouTube →";
+                placeholder.querySelector(".video-placeholder-inner").onclick = function () {
+                    window.open("https://youtube.com/@haxdogma", "_blank", "noopener");
+                };
+            }
+        });
+})();
+</script>
+
 {{ partial "email-signup.html" . }}

@@ -64,6 +64,10 @@ This site is the record. The research is real. The plan is documented. Follow th
     name = "Roadmap"
     url = "/roadmap/"
     weight = 3
+  [[menu.main]]
+    name = "GitHub"
+    url = "/github/"
+    weight = 4
 
 [markup]
   [markup.highlight]

@@ -1,5 +1,5 @@
 <style>
-/* ── Email signup section ────────────────────────────────────────────────── */
+/* ── Email signup ────────────────────────────────────────────────────────── */
 .email-signup-section {
     margin: 2.5rem 0 1.5rem;
     padding: 1.75rem 2rem;
@@ -7,27 +7,23 @@
     border-radius: 8px;
     background: var(--entry);
 }
-
 .email-signup-title {
     margin: 0 0 0.4rem;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.01em;
 }
-
 .email-signup-desc {
     margin: 0 0 1.1rem;
     font-size: 0.92rem;
     color: var(--secondary);
     line-height: 1.5;
 }
-
 .email-signup-row {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
-
 .email-signup-input {
     flex: 1;
     min-width: 180px;
@@ -40,11 +36,7 @@
     outline: none;
     transition: border-color 0.15s;
 }
-
-.email-signup-input:focus {
-    border-color: var(--primary);
-}
-
+.email-signup-input:focus { border-color: var(--primary); }
 .email-signup-btn {
     padding: 0.5rem 1.2rem;
     font-size: 0.95rem;
@@ -57,22 +49,146 @@
     transition: opacity 0.15s;
     white-space: nowrap;
 }
-
-.email-signup-btn:hover {
-    opacity: 0.85;
-}
-
-.email-signup-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
+.email-signup-btn:hover    { opacity: 0.85; }
+.email-signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .email-signup-status {
     margin: 0.6rem 0 0;
     font-size: 0.88rem;
     min-height: 1.2em;
 }
-
 .email-signup-status--ok    { color: #4caf50; }
 .email-signup-status--error { color: #e53935; }
+
+/* ── Latest video ────────────────────────────────────────────────────────── */
+.latest-video-section {
+    margin: 2rem 0;
+}
+.latest-video-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+.latest-video-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.latest-video-channel {
+    font-size: 0.88rem;
+    color: var(--secondary);
+    text-decoration: none;
+}
+.latest-video-channel:hover { color: var(--primary); }
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--entry);
+}
+.video-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-placeholder-inner {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    cursor: default;
+}
+.video-caption {
+    margin: 0.5rem 0 0;
+    font-size: 0.88rem;
+    color: var(--secondary);
+}
+
+/* ── GitHub profile page ─────────────────────────────────────────────────── */
+.gh-page { max-width: 100%; }
+
+.gh-profile {
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+.gh-avatar-wrap { flex-shrink: 0; }
+.gh-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--entry);
+}
+.gh-meta { flex: 1; min-width: 200px; }
+.gh-name  { margin: 0 0 0.15rem; font-size: 1.4rem; }
+.gh-login { margin: 0 0 0.5rem; color: var(--secondary); font-size: 0.95rem; }
+.gh-bio   { margin: 0 0 0.75rem; font-size: 0.95rem; line-height: 1.5; }
+.gh-stats { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.gh-stat  { font-size: 0.9rem; color: var(--secondary); }
+.gh-stat strong { color: var(--primary); }
+.gh-link  { font-size: 0.9rem; text-decoration: none; color: var(--secondary); }
+.gh-link:hover { color: var(--primary); }
+
+.gh-section       { margin-bottom: 2.5rem; }
+.gh-section-title { font-size: 1.05rem; font-weight: 600; margin: 0 0 1rem; }
+
+.gh-contrib-wrap  { overflow-x: auto; border-radius: 8px; }
+.gh-contrib-chart {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    filter: invert(0.85) hue-rotate(180deg); /* inverts to match dark theme */
+}
+@media (prefers-color-scheme: light) {
+    .gh-contrib-chart { filter: none; }
+}
+
+.gh-repos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+.gh-repo-card {
+    display: block;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--entry);
+    text-decoration: none;
+    color: var(--primary);
+    transition: border-color 0.15s, background 0.15s;
+}
+.gh-repo-card:hover { border-color: var(--primary); }
+.gh-repo-name { margin: 0 0 0.4rem; font-size: 0.95rem; font-weight: 600; }
+.gh-repo-desc { margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--secondary); line-height: 1.4; }
+.gh-repo-meta { display: flex; gap: 0.75rem; font-size: 0.8rem; color: var(--secondary); flex-wrap: wrap; }
+.gh-repo-lang::before { content: "● "; }
+
+.gh-activity      { list-style: none; padding: 0; margin: 0; }
+.gh-activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+.gh-activity-item a  { font-size: 0.9rem; color: var(--primary); text-decoration: none; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gh-activity-item a:hover { text-decoration: underline; }
+.gh-activity-date { font-size: 0.8rem; color: var(--secondary); white-space: nowrap; }
+.gh-loading       { color: var(--secondary); font-size: 0.9rem; }
 </style>
