@@ -1,0 +1,78 @@
+<style>
+/* ── Email signup section ────────────────────────────────────────────────── */
+.email-signup-section {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.75rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--entry);
+}
+
+.email-signup-title {
+    margin: 0 0 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.email-signup-desc {
+    margin: 0 0 1.1rem;
+    font-size: 0.92rem;
+    color: var(--secondary);
+    line-height: 1.5;
+}
+
+.email-signup-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.email-signup-input {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--theme);
+    color: var(--primary);
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.email-signup-input:focus {
+    border-color: var(--primary);
+}
+
+.email-signup-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background: var(--primary);
+    color: var(--theme);
+    cursor: pointer;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+}
+
+.email-signup-btn:hover {
+    opacity: 0.85;
+}
+
+.email-signup-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.email-signup-status {
+    margin: 0.6rem 0 0;
+    font-size: 0.88rem;
+    min-height: 1.2em;
+}
+
+.email-signup-status--ok    { color: #4caf50; }
+.email-signup-status--error { color: #e53935; }
+</style>

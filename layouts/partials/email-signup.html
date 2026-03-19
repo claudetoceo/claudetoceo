@@ -1,0 +1,132 @@
+<section class="email-signup-section">
+    <h2 class="email-signup-title">Stay in the loop</h2>
+    <p class="email-signup-desc">New research, updates, and milestones — delivered directly to you. No noise.</p>
+
+    <form
+        id="email-signup-form"
+        class="email-signup-form"
+        action="https://claudetoceo.com/subscribe"
+        method="POST"
+        novalidate
+    >
+        <div class="email-signup-row">
+            <input
+                id="email-signup-input"
+                type="email"
+                name="email"
+                class="email-signup-input"
+                placeholder="you@example.com"
+                maxlength="42"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                autocomplete="email"
+                spellcheck="false"
+                required
+                aria-label="Email address"
+                aria-describedby="email-signup-status"
+            >
+            <button type="submit" class="email-signup-btn">Subscribe</button>
+        </div>
+        <p id="email-signup-status" class="email-signup-status" aria-live="polite"></p>
+    </form>
+</section>
+
+<script>
+(function () {
+    "use strict";
+
+    // Characters permitted in a valid email address (RFC 5321 local + domain parts)
+    var VALID_EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    var MAX_LEN = 42;
+
+    var form   = document.getElementById("email-signup-form");
+    var input  = document.getElementById("email-signup-input");
+    var status = document.getElementById("email-signup-status");
+
+    if (!form || !input || !status) return;
+
+    function setStatus(msg, isError) {
+        // Use textContent — never innerHTML — to prevent XSS
+        status.textContent = msg;
+        status.className   = "email-signup-status" + (isError ? " email-signup-status--error" : " email-signup-status--ok");
+    }
+
+    function sanitize(raw) {
+        // Strip every character that has no place in an email address
+        return raw.replace(/[^a-zA-Z0-9._%+\-@]/g, "").slice(0, MAX_LEN);
+    }
+
+    // Sanitize on every keystroke so invalid characters never reach the field
+    input.addEventListener("input", function () {
+        var clean = sanitize(input.value);
+        if (clean !== input.value) {
+            input.value = clean;
+        }
+        status.textContent = "";
+        status.className   = "email-signup-status";
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var raw   = input.value;
+        var clean = sanitize(raw);
+
+        // Hard length cap
+        if (clean.length === 0) {
+            setStatus("Please enter your email address.", true);
+            input.focus();
+            return;
+        }
+
+        if (clean.length > MAX_LEN) {
+            setStatus("Email address must be " + MAX_LEN + " characters or fewer.", true);
+            input.focus();
+            return;
+        }
+
+        // Strict format validation
+        if (!VALID_EMAIL_RE.test(clean)) {
+            setStatus("Please enter a valid email address.", true);
+            input.focus();
+            return;
+        }
+
+        // Write back the sanitized value before sending
+        input.value = clean;
+
+        var btn = form.querySelector("button[type=submit]");
+        btn.disabled = true;
+        setStatus("Subscribing…", false);
+
+        var data = new FormData();
+        // Append the sanitized value explicitly — do not use the raw form
+        data.append("email", clean);
+
+        fetch(form.action, {
+            method:  "POST",
+            body:    data,
+            headers: { "Accept": "application/json" }
+        })
+        .then(function (res) {
+            if (res.ok) {
+                setStatus("You're in. Welcome to the list.", false);
+                form.reset();
+            } else {
+                res.json().then(function (json) {
+                    var msg = (json && json.error) ? json.error : "Something went wrong. Please try again.";
+                    // Sanitize the server message before display
+                    setStatus(msg.replace(/[<>"'&]/g, ""), true);
+                }).catch(function () {
+                    setStatus("Something went wrong. Please try again.", true);
+                });
+            }
+        })
+        .catch(function () {
+            setStatus("Could not reach the server. Please try again.", true);
+        })
+        .finally(function () {
+            btn.disabled = false;
+        });
+    });
+})();
+</script>

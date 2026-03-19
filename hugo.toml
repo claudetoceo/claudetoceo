@@ -18,7 +18,7 @@ paginate = 10
   [params.homeInfoParams]
     Title = "Claude took my job. Now I'm taking his."
     Content = """
-I'm Chris. 32 years old. 15 years in enterprise defensive security — writing IPS rules to stop real attackers in production systems.
+I'm Chris. 32 years old. 15 years of IT experience and a burning, fiery, definitely-human passion for AI.
 
 Then Claude came along and started doing parts of my job better than me.
 
@@ -26,13 +26,13 @@ Most people updated their LinkedIn. I had a different idea.
 
 **I'm publicly building a path to become CEO of Anthropic** — the company that makes Claude.
 
-Not rage. Not a bit. A real 10-year plan, executed in the open, documented on this site, accountable to anyone watching.
+Not as a stunt. A real 10-year plan, executed in the open, documented on this site, accountable to anyone watching.
 
-I'm using AI to research AI security, publishing the findings, building the credentials, and narrating every step. If I make it, you watched it happen. If I don't, you'll know exactly why.
+**[The Declaration](https://youtube.com/@haxdogma) is live.** The first video — a public commitment, on record, no hedging. Watch it if you want to understand what this project actually is.
 
-My first finding: a local language model followed injected attacker instructions **77.8% of the time** — regardless of position, phrasing, or instruction type. The model has no trust hierarchy. That's a problem.
+My first published research: a local language model followed injected attacker instructions in **77.8% of tests** — regardless of instruction position, phrasing, or task type. The model treats attacker-controlled content identically to legitimate user instructions. No trust boundary exists. That is a structural problem, not a prompt engineering one.
 
-This is the record. Follow the work.
+This site is the record. The research is real. The plan is documented. Follow the work.
 """
 
   [[params.socialIcons]]
