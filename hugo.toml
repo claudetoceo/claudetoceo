@@ -68,6 +68,10 @@ This site is the record. The research is real. The plan is documented. Follow th
     name = "GitHub"
     url = "/github/"
     weight = 4
+  [[menu.main]]
+    name = "News Maxing"
+    url = "/news-maxing/"
+    weight = 5
 
 [markup]
   [markup.highlight]
