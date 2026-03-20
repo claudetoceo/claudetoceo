@@ -6,6 +6,11 @@ summary: "A DOJ indictment, the objective facts behind it, and three ways to rea
 tags: ["export controls", "AI hardware", "China", "national security"]
 ---
 
+<div style="background:#fff9c4;border-left:4px solid #f9a825;padding:1rem 1.25rem;margin:0 0 2rem;border-radius:4px;color:#333;">
+<strong>⚠ What This Page Is</strong><br><br>
+This is an experiment in bias baseline mapping. Before forming an opinion on any news story, it helps to see the same set of raw facts interpreted through at least three distinct frames: good faith, bad faith, and somewhere in between. Most journalism already has one of these frames baked in — often without stating it. This page makes the frame explicit. The goal is to build a habit of asking <em>which reading am I defaulting to, and why?</em> — before treating any single interpretation as the obvious one.
+</div>
+
 ## The Source
 
 All factual claims in this piece are drawn directly from a single primary source:
