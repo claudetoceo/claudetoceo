@@ -16,6 +16,7 @@ Original research testing injection vulnerability in local LLMs. Llama 3.2 3B fo
 
 ## Research Articles
 
+- [AI Transparency That Actually Works](https://claudetoceo.com/research/ai-transparency-that-works/) - Structural transparency vs label transparency, lessons from AI-written news analysis
 - [Contextual Alignment: The Missing Layer in AI-Assisted Development](https://claudetoceo.com/research/contextual-alignment/) - Framework for persistent AI collaboration context
 - [Indirect Prompt Injection in Local LLMs](https://claudetoceo.com/research/indirect-prompt-injection-llama3/) - Systematic security testing of Llama 3.2 3B
 
