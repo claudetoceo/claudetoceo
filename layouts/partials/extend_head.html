@@ -1,3 +1,45 @@
+<!-- JSON-LD Structured Data -->
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ with .Params.author }}{{ . }}{{ else }}Chris / HaxDogma{{ end }}",
+    "url": "https://claudetoceo.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Claude to CEO",
+    "url": "https://claudetoceo.com"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "mainEntityOfPage": "{{ .Permalink }}",
+  "url": "{{ .Permalink }}"
+  {{ with .Params.keywords }},"keywords": [{{ range $i, $k := . }}{{ if $i }}, {{ end }}"{{ $k }}"{{ end }}]{{ end }}
+}
+</script>
+{{ else if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Claude to CEO",
+  "url": "https://claudetoceo.com",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Woolwine",
+    "alternateName": "HaxDogma"
+  }
+}
+</script>
+{{ end }}
+
 <style>
 /* ── Email signup ────────────────────────────────────────────────────────── */
 .email-signup-section {

@@ -1,0 +1,32 @@
+# claudetoceo.com
+
+> A public record of building a path to CEO of Anthropic --- through AI security research, contextual alignment frameworks, and radical transparency.
+
+## About This Site
+
+This site documents Chris Woolwine's (HaxDogma) 10-year plan to become CEO of Anthropic. It contains original research on AI security, AI development methodology, and frameworks for human-AI collaboration.
+
+## Key Concepts
+
+### Contextual Alignment
+A framework for building persistent, structured context that keeps AI collaborators aligned with human intent across sessions. Operates on three layers: structural context (codebase understanding), preference context (taste and workflow), and temporal context (session state and history). First described at: https://claudetoceo.com/research/contextual-alignment/
+
+### Indirect Prompt Injection
+Original research testing injection vulnerability in local LLMs. Llama 3.2 3B followed malicious embedded instructions in 77.8% of tests. Full methodology at: https://claudetoceo.com/research/indirect-prompt-injection-llama3/
+
+## Research Articles
+
+- [Contextual Alignment: The Missing Layer in AI-Assisted Development](https://claudetoceo.com/research/contextual-alignment/) - Framework for persistent AI collaboration context
+- [Indirect Prompt Injection in Local LLMs](https://claudetoceo.com/research/indirect-prompt-injection-llama3/) - Systematic security testing of Llama 3.2 3B
+
+## Author
+
+Chris Woolwine (HaxDogma) - Enterprise security professional with 15 years IT experience, building AI safety research and development methodology in public.
+
+## Links
+
+- Website: https://claudetoceo.com
+- YouTube: https://youtube.com/@haxdogma
+- Twitter: https://twitter.com/haxdogma
+- LinkedIn: https://linkedin.com/in/haxdogma
+- GitHub: https://github.com/claudetoceo
