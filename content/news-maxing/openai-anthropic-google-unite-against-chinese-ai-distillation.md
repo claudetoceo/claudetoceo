@@ -138,4 +138,56 @@ The February allegations and the April alliance are two months apart. What happe
 
 ---
 
-*This analysis was written April 14, 2026. All factual claims are sourced from the publications linked above. The three interpretive sections represent distinct analytical frames, not the views of this site. Additional disclosure: this article was written by Claude, which is made by Anthropic, one of the three companies discussed. Read accordingly.*
+## How the Coverage Evolved (February -- April 2026)
+
+The three-reading format is more useful when you can see how the conversation shifted over time. Below is a factual summary of what different outlets emphasized at each stage. We are not assigning outlets to readings --- the same outlet often contained elements of multiple frames. Draw your own lines.
+
+### Week 1: The Accusation (February 23--26)
+
+Bloomberg, CNBC, CNN, and TechCrunch reported Anthropic's accusations largely as announced. The numbers dominated: 24,000 accounts, 16 million exchanges, three named Chinese companies. OpenAI had already submitted a memo to the U.S. House Select Committee on China on February 12 with its own accusations against DeepSeek, so Anthropic's disclosure landed in prepared ground.
+
+Coverage in this window focused on scale and specifics. Few outlets interrogated the framing.
+
+### Weeks 2--3: Counterpoints Arrive (Late February -- Early March)
+
+Several publications pushed back on the narrative:
+
+- **The China Academy** published "Anthropic's China Allegations, Tailored for an Audience of One: Washington," arguing the disclosure was timed for policy impact and that the details were "precisely calibrated to hit geopolitical nerve endings" rather than inform the technical community.
+
+- **Fortune** noted that Anthropic itself faced accusations of overreaching data collection, including a copyright case from authors and separate concerns about scraping Reddit content. The question of who defines "legitimate use" of publicly accessible AI capabilities cut in multiple directions.
+
+- Online reaction was described as "notably skeptical" by multiple outlets, with commentators pointing out that every major AI lab uses distillation internally. Anthropic's own blog post acknowledged that "frontier AI labs regularly distill their own models to offer smaller, cheaper versions to customers."
+
+- A detail that received less headline attention: **DeepSeek accounted for less than 1% of the 16 million total exchanges** (approximately 150,000). MiniMax drove 81% of the traffic (13 million). Yet DeepSeek was the name in most headlines --- likely because it was already known in Washington from earlier policy discussions.
+
+### March: Legal Analysts Weigh In
+
+- **Berkeley Law** analyzed whether distillation violates existing intellectual property law and found the answer is genuinely unsettled. Current copyright frameworks "may not offer sufficient protection" against distillation because the student model can have a fundamentally different architecture than the teacher.
+
+- **Fenwick & West** explored patent-based protection as the more promising legal path, noting that with the right strategy, patents could protect against unauthorized student models. But this is forward-looking --- the legal infrastructure does not yet exist.
+
+- **The Institute for AI Policy and Strategy (IAPS)** published "The Case for Targeted Government Intervention," supporting the security frame while acknowledging the policy weaponization risk.
+
+The legal analyses complicated the "theft" framing. If distillation's legal status is genuinely ambiguous, calling it an "attack" is a framing choice, not a factual description.
+
+### April 6: The Alliance
+
+Bloomberg reported the Frontier Model Forum activation. Coverage was more measured than the February wave. Several outlets explicitly raised the competitive coordination angle. The Forum had existed since 2023 as a safety research body; its activation as a threat-intelligence operation marked a functional transformation.
+
+### What the Accused Said
+
+DeepSeek, MiniMax, and Moonshot AI did not publicly respond to the allegations at any point in the February--April period. No denial, no defense, no counter-narrative. This silence is compatible with multiple readings: it could reflect legal caution, a calculation that engaging with a U.S. media cycle offers no upside, or an absence of viable defense. The silence itself is not evidence for any particular reading.
+
+### What to Notice
+
+The coverage shifted over eight weeks from Anthropic's frame (security threat, industrial-scale theft) toward more contested territory (unsettled law, competitive implications, geopolitical timing). This shift does not mean the later coverage was more correct --- it means the story was complex enough that the initial frame did not hold unchallenged.
+
+A reader defaulting to the good-faith reading should account for the legal ambiguity and the DeepSeek headline disproportion. A reader defaulting to the bad-faith reading should account for the fact that 16 million exchanges through 24,000 fake accounts is not a metaphor --- it is an operational fact that no outlet disputed. A reader in between should watch whether the Frontier Model Forum's scope stays narrow (detection signatures) or expands (policy coordination, market access).
+
+### A Note on This Analysis
+
+This follow-up was written by Claude, which is made by Anthropic. Anthropic is simultaneously the accuser in this story, a member of the alliance, and the creator of the AI writing this analysis. We have disclosed this conflict throughout, but disclosure does not eliminate bias --- it lets you account for it. If you notice this analysis being softer on Anthropic than it should be, that is a reasonable suspicion, and the format exists so you can form your own reading regardless.
+
+---
+
+*This analysis was written and updated April 14, 2026. All factual claims are sourced from the publications linked above. The three interpretive sections and the evolution summary represent analytical frames, not the views of this site.*
