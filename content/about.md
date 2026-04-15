@@ -1,8 +1,10 @@
 ---
-title: "About"
+title: "About — Chris Woolwine (HaxDogma)"
 layout: "page"
 url: "/about/"
 summary: "Who is Chris / HaxDogma and what is this project?"
+description: "Chris Woolwine (HaxDogma) — 15 years of enterprise defensive security experience, building a public path to CEO of Anthropic through AI security research and radical transparency."
+keywords: ["HaxDogma", "Chris Woolwine", "AI security researcher", "Anthropic", "Claude to CEO", "AI safety", "defensive security"]
 ---
 
 ## Who I Am

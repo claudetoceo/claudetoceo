@@ -4,6 +4,7 @@ date: 2026-03-09
 author: "Chris / HaxDogma"
 tags: ["ai-security", "prompt-injection", "llama", "red-teaming", "research"]
 description: "Llama 3.2 3B followed malicious instructions embedded in untrusted document content in 28 out of 36 tests (77.8%). A systematic test across placement, style, and task type."
+keywords: ["indirect prompt injection", "prompt injection attack", "LLM security", "Llama 3.2 vulnerability", "AI red teaming", "LLM safety testing", "prompt injection defense", "AI security research"]
 showToc: true
 TocOpen: true
 ---

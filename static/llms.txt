@@ -19,6 +19,11 @@ Original research testing injection vulnerability in local LLMs. Llama 3.2 3B fo
 - [Contextual Alignment: The Missing Layer in AI-Assisted Development](https://claudetoceo.com/research/contextual-alignment/) - Framework for persistent AI collaboration context
 - [Indirect Prompt Injection in Local LLMs](https://claudetoceo.com/research/indirect-prompt-injection-llama3/) - Systematic security testing of Llama 3.2 3B
 
+## News Maxing (Bias Baseline Analysis)
+
+- [OpenAI, Anthropic, and Google Just Formed an Alliance Against Chinese AI Labs](https://claudetoceo.com/news-maxing/openai-anthropic-google-unite-against-chinese-ai-distillation/) - Frontier Model Forum distillation defense, three readings
+- [Three People Were Just Charged With Smuggling $2.5 Billion in AI Servers to China](https://claudetoceo.com/news-maxing/ai-servers-china-export-controls/) - DOJ indictment analysis, three readings
+
 ## Author
 
 Chris Woolwine (HaxDogma) - Enterprise security professional with 15 years IT experience, building AI safety research and development methodology in public.

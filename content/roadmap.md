@@ -1,8 +1,10 @@
 ---
-title: "The Roadmap"
+title: "The Roadmap — 10-Year Path to CEO of Anthropic"
 layout: "page"
 url: "/roadmap/"
 summary: "The 6-phase plan from here to CEO of Anthropic."
+description: "A public 6-phase, 10-year plan to become CEO of Anthropic — from AI security research to executive leadership. Updated live with progress."
+keywords: ["Anthropic CEO", "AI career roadmap", "AI leadership", "Claude to CEO plan", "AI safety career"]
 ---
 
 This is a living document. Each phase builds on the last. Timelines are targets, not deadlines — progress determines pace.

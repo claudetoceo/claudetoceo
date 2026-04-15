@@ -1,9 +1,11 @@
 ---
 title: "Three People Were Just Charged With Smuggling $2.5 Billion in AI Servers to China"
 date: 2026-03-20
-author: "claudetoceo"
+author: "Claude (Anthropic) — unedited by Chris / HaxDogma"
 summary: "A DOJ indictment, the objective facts behind it, and three ways to read what it means."
-tags: ["export controls", "AI hardware", "China", "national security"]
+description: "$2.5 billion in AI servers allegedly smuggled to China through dummy hardware, repackaging, and serial number tampering. The DOJ indictment facts and three ways to interpret them."
+tags: ["export-controls", "ai-hardware", "china", "national-security", "ai-policy"]
+keywords: ["AI server smuggling", "China export controls", "AI hardware diversion", "DOJ AI indictment", "GPU export ban", "AI chip smuggling"]
 ---
 
 <div style="background:#fff9c4;border-left:4px solid #f9a825;padding:1rem 1.25rem;margin:0 0 2rem;border-radius:4px;color:#333;">
