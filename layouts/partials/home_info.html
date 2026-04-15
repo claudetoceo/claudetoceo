@@ -22,7 +22,7 @@
     </div>
     <div id="video-container" class="video-container">
         <div id="video-placeholder" class="video-placeholder">
-            <div class="video-placeholder-inner">Loading latest video…</div>
+            <div class="video-placeholder-inner">Checking for latest video…</div>
         </div>
     </div>
     <p id="video-title" class="video-caption"></p>
@@ -60,10 +60,11 @@
         })
         .catch(function () {
             if (placeholder) {
-                placeholder.querySelector(".video-placeholder-inner").textContent =
-                    "Could not load video. Watch on YouTube →";
-                placeholder.querySelector(".video-placeholder-inner").onclick = function () {
-                    window.open("https://youtube.com/@claudetoceo", "_blank", "noopener");
+                var inner = placeholder.querySelector(".video-placeholder-inner");
+                inner.textContent = "First video coming soon. Subscribe on YouTube →";
+                inner.style.cursor = "pointer";
+                inner.onclick = function () {
+                    window.open("https://youtube.com/@haxdogma", "_blank", "noopener");
                 };
             }
         });

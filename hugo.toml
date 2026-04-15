@@ -39,7 +39,11 @@ Not as a stunt. A real 10-year plan, executed in the open, documented on this si
 
 **[The Declaration](https://youtube.com/@haxdogma) is live.** The first video — a public commitment, on record, no hedging. Watch it if you want to understand what this project actually is.
 
-My first published research: a local language model followed injected attacker instructions in **77.8% of tests** — regardless of instruction position, phrasing, or task type. The model treats attacker-controlled content identically to legitimate user instructions. No trust boundary exists. That is a structural problem, not a prompt engineering one.
+My first published research: a local language model followed injected attacker instructions in **77.8% of tests** — regardless of instruction position, phrasing, or task type. No trust boundary exists. That is a structural problem, not a prompt engineering one.
+
+Latest: **[Contextual Alignment](/research/contextual-alignment/)** — a framework for keeping AI collaborators aligned with your intent across sessions, developed over 21 sessions building a 57,000-line game with Claude Code.
+
+**[News Maxing](/news-maxing/)** — AI news through three lenses. Good faith, bad faith, and in between. Raw facts first, then you decide.
 
 This site is the record. The research is real. The plan is documented. Follow the work.
 """
