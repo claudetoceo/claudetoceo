@@ -41,7 +41,9 @@ Not as a stunt. A real 10-year plan, executed in the open, documented on this si
 
 My first published research: a local language model followed injected attacker instructions in **77.8% of tests** — regardless of instruction position, phrasing, or task type. No trust boundary exists. That is a structural problem, not a prompt engineering one.
 
-Latest: **[Contextual Alignment](/research/contextual-alignment/)** — a framework for keeping AI collaborators aligned with your intent across sessions, developed over 21 sessions building a 57,000-line game with Claude Code.
+Latest: **[Pissant: The Queen's Shareholders](/research/pissant-announcement/)** — the game I've been building with Claude Code now has a name and a launch on the horizon. A roguelite about disposable workers, an indifferent Queen, and her shareholders.
+
+Also: **[Contextual Alignment](/research/contextual-alignment/)** — a framework for keeping AI collaborators aligned with your intent across sessions, developed over 21 sessions building a 57,000-line game with Claude Code.
 
 **[News Maxing](/news-maxing/)** — AI news through three lenses. Good faith, bad faith, and in between. Raw facts first, then you decide.
 
